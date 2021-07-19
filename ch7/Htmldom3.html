@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 다루기</title>
+    <style>
+        /* p{
+            border: 3px dotted magenta;
+        } */
+    </style>
+</head>
+<body>
+    <p id="first">자바스크립트가 재밌어요.</p>
+    <p id="second">안녕하세요<span id="third" style="color:pink">자바스크립트</span>입니다.</p>
+
+    <script>
+
+        //CSS 스타일 설정
+       var p1 = document.getElementById("first");
+       p1.style.color="red";
+       p1.style.backgroundColor="yellow";
+       
+       document.getElementById("second").style.color="blue";
+
+       var p2 = document.getElementById("second");
+       p2.style.backgroundColor="skyblue";
+    //    p2.style.cssText="background-color:green";
+        
+
+    //스타일 프로퍼티로 읽어오기
+    var span = document.getElementById("third");
+    var color = span.style.color;
+    document.write("방법 1 : span태그의 style값 : "+color+"<br>");
+
+    var style = window.getComputedStyle(span);
+    var value = style.getPropertyValue("color");
+    document.write("방법 2 : span태그의 style값 : "+color);  
+
+    //박스유형, 테두리, 여백변경
+    p2.style.display = "block";
+    p2.style.width = "15em";
+    p2.style.height = "50px"
+    p2.style.border = "3px dotted magenta";
+    p2.style.margin = "20px";
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function Student(n, d, grade) {
+            name = n;
+            dept = d;
+            this.grade = grade;
+
+            this.print = print;
+        }
+
+        function print() {
+            document.write(name+"은 "+dept+"과 "+this.grade+"학년입니다.<br>")
+        }
+    </script>
+</head>
+<body>
+    <script>
+
+        var s1 = new Student("홍길동", "컴퓨터공학", 2);
+        var s2 = new Student("이순신", "건축학", 1);
+        var s3 = new Student("강감찬", "기계공학", 4);
+
+        s1.print();
+        s2.print();
+        s3.print();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //프로토타입 함수 정의
+
+        function Gugudan(dan){
+
+            this.dan = dan;
+            for(var i=1; i<=9; i++){
+                    document.write("<h3>"+dan+"*"+i+"="+(dan*i)+"</h3>");
+            }
+            
+            //내부에 정의
+            this.guguPrint = function () {
+                for(var i=1; i<=9; i++){
+                    document.write("<h3>"+dan+"*"+i+"="+(dan*i)+"</h3>");
+                }
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <script>
+        var dan = parseInt(prompt("단을 입력해 주세요.",""));
+
+        //객체생성활용
+        var gugu = new Gugudan(dan);
+        document.write("입력하신 단은"+gugu.dan+"입니다.");
+        document.write("<hr>");
+
+        gugu.guguPrint();
+    </script>
+</body>
+</html>

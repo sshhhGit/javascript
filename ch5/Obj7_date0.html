@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h3>방문 초시간이 짝수이 violet, 홀수이면 lightskyblue</h3>
+    <hr>
+    <script type="text/javascript">
+
+      var now = new Date();
+
+      // document.write(now.getFullYear()+"년도, ");
+      // document.write(now.getMonth()+"월, ")
+      // document.write(now.getDate()+"일, ")
+      document.write("현재시간 : ")
+      document.write(now.getHours()+"시")
+      document.write(now.getMinutes()+"분")
+      document.write(now.getSeconds()+"초")
+
+
+      if(now.getSeconds()%2 == 0){
+      document.bgColor = "violet"
+
+    } else {
+      document.bgColor = "lightskyblue"
+    }
+      // document.write(now.getMilliseconds()+"밀리초<br><hr>");
+
+      // document.write(now.toUTCString()+"<br>")
+      // document.write(now.toLocaleString()+"<hr>")
+      //
+      // var next = new Date(2021,10,19,12,30,15);
+      // document.write("next.toLocaleString() : " +next.toLocaleString()+"<br>")
+      // document.write("next.toUTCString() : " +next.toUTCString()+"<br>")
+
+
+    </script>
+    <!-- <style media="screen">
+      body {
+        background-color: violet
+      } -->
+    </style>
+  </body>
+</html>

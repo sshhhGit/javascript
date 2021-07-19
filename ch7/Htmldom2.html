@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트가 재밌다.</title>
+</head>
+<body>
+
+    <h3>DOM객체 프로퍼티, 스타일, 이벤트리스너</h3>
+    <hr>
+    <p id="firstP" style="color:green; background: yellow;" onclick="this.style.color='teal'"></p>
+
+        이것은 <span style="color:red">문장입니다.</span>
+
+    <script> 
+
+        alert("document.body.innerHTML");
+        document.write("문서제목 : "+document.title);
+
+        //DOM객체의 프로퍼티 실습
+        var p = document.getElementById("FirstP");
+
+        var text = p.id+"\n";
+        text += "p.tagName = "+p.tagName+"\n";
+        text += "p.tagName = "+p.innerHTML+"\n";
+        text += "p.style.color = "+p.style.color+"\n";
+        text += "p.onclick = "+p.onclick+"\n";
+        text += "p.childElementCount = "+p.childElementCount+"\n";
+        text += "p.offsetWidth = "+p.offsetWidth+"\n";
+        text += "p.offsetHeight = "+p.offsetHeight+"\n";
+
+        alert(text)
+
+
+    
+    </script>
+</body>
+</html>

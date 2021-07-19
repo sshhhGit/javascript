@@ -1,0 +1,66 @@
+<!--
+
+	String 객체
+		; 가장많이 사용
+
+		. 생성 : var str = ""; 문자리터럴 -- 자도으로 String 객체가 된다
+				var str = new String("");
+
+		. 접근 : [인덱스] = 'H' 문자하나도 문자가 아니라 문자열. 자바스크립트는 문자타입이 문자열만 있다
+
+		. 특징
+		  	- 한번 생성된 객체는 수정이 불가하다.
+		  	- 문자열도 length프로퍼티를 갖는다.
+		  	- []연산자에 인덱스를 활용하여 특정문자에 접근할 수 있다.
+
+		. 주요메서드
+			- charAt(index)      	   : 인덱스에 해당하는 문자반환
+			- charCodeAt(index)      : 해당하는 인덱스의 글자를 16비트 유니코드 값으로 리턴
+
+			- concat(s1, s2,,,)  	   : 현재 문자열뒤에 s1, s2,,,, 을 순서대로 연결
+			- indexOf(s[,index]) 	   : s가 처음으로 나타나는 인덱스를 리턴 [] -> 생략가능
+			- replace(strA, strB)	   : A를 B로 수정
+			- slice(indexA[,indexB])   : indexA에서 indexB-1 까지 리턴
+			- split(separator[,limit]) : separator 문자열을 구분자로 하여 문자열을 분리하여 배열반환, limit는 리턴하는 배열의 크기를 제한하는 상수
+			- sbustr(indexA[,length])  : indexA부터 length길이만큼 새로운 문자열로 리턴, length가 생략되면 끝가지 리턴
+			- substring(indexA, indexB : A와 B사이에 있는 문자열 리턴
+			- trim()                   : 문자열의 앞뒤 공백문자(빈칸, 탭, 엔터키)를 제거한 새로운 문자열 리턴
+			- toLowerCase()			   : 소문자
+			- toUppererCase()		   : 대문자
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+	<h3>String 객체의 메소드활용</h3>
+	<hr>
+	<script type="text/javascript">
+
+		var a = new String("Boys and Girls");
+		var b = "!!";
+
+		document.write(a.charAt(0)+"<br>"); // 0번째 인덱스의 문자를 반환
+		document.write(a.concat(b, "입니다.<br>")); //a객체와 b객체와 "입니다" 결합
+		document.write(a.indexOf("s")+"<br>"); // 's'가 첫번째인 인덱스 리턴
+		document.write(a.indexOf("And")+"<br>"); //없으면 -1
+		document.write(a.slice(5, 8)+"<br>"); //5~(8-1) 출력
+		document.write(a.substr(5, 3)+"<br>"); //5부터 3개까지 출력
+		document.write(a.replace("and", "or")+"<br>"); // "and" -> "or" 변경
+		document.write("         JavaScript       ".trim()+"<br><hr>"); //공백제거
+
+		var sub = a.split(" ");
+		for(var i=0;i<sub.length;i++){
+			document.write("sub"+i+"="+sub[i]+"<br>");
+		}
+
+		document.write("<hr>String 메소드를 실행 후 a와 b가 변했나요?<br><hr>")
+		document.write("a : "+a+"<br>")
+		document.write("b : "+a+"<br>")
+
+	</script>
+</html>

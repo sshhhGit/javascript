@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h3>정수 5개 입력받아 역순으로 출력</h3>
+    <hr>
+    <script>
+        // var num = new Num[n1, n2, n3, n4, n5];
+        //     var n1 = parseInt(prompt());
+        //     var n2 = parseInt(prompt());
+        //     var n3 = parseInt(prompt());
+        //     var n4 = parseInt(prompt());
+        //     var n5 = parseInt(prompt());
+        
+        
+        
+        
+        // for(i=0;i<num.length;i++){
+        //     document.write(num[i]+" ");
+        // }
+        // document.write(num[0])
+        var arr = new Array(5);
+        arr[0] = 10
+		arr[1] = 20
+		arr[2] = 30
+        arr[3] = 40
+        arr[4] = 50
+        document.write("입력된 수의 배열<br>");
+        for(i=0;i<arr.length;i++){
+			document.write(arr[i]+" ");
+		}
+		document.write("<hr>"+"역순으로 재정렬된 배열<br>");
+        
+        for(i=arr.length-1;i>=0;i--){
+			document.write(arr[i]+" ");
+		}
+        document.write("<hr>입력된 수의 배열<br>");
+        document.write(arr)
+		document.write("<hr>"+"역순으로 재정렬된 배열<br>");
+        var revers = arr.reverse();
+        document.write(revers)
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function change() {
+            var p = document.getElementById("p1");
+            var text = "이제부터 자바스클비트의 중요한 부분을 합습한디다."
+
+            text = text+"<br><hr>";
+            text = text+"<img src='../imge/거리.png' width=500 height=400><hr>"
+            text = text+"<p>졸립지만 열심히 합시다</p>";
+
+            p.innerHTML = text;
+            
+        }
+
+    </script>
+</head>
+<body>
+    <h2>Web Programming!</h2>
+    <p id="p1">HTML DOM객체 제어에 대해 합습중입닌다.</p>
+    <button type="button" onclick="change()">Next</button>
+    
+</body>
+</html>

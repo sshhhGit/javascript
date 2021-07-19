@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+
+      var now = new Date();
+      var end = new Date(2021, 9, 13);
+
+      var year = now.getFullYear();
+      var month = now.getMonth();
+      var date = now.getDate();
+      var day = now.getDay();
+      var hour = now.getHours();
+      var minute = now.getMinutes();
+
+      // switch(date.getDay()) {
+      // case 0: document.write("&nbsp;일요일&nbsp;".fontsize(7).fontcolor("red"));
+      //   break;
+      //   case 1: document.write("&nbsp;월요일&nbsp;".fontsize(7).fontcolor("Orange"));
+      //     break;
+      //     case 2: document.write("&nbsp;화요일&nbsp;".fontsize(7).fontcolor("yellow"));
+      //       break;
+      //       case 3: document.write("&nbsp;수요일&nbsp;".fontsize(7).fontcolor("green"));
+      //         break;
+      //         case 4: document.write("&nbsp;목요일&nbsp;".fontsize(7).fontcolor("blue"));
+      //           break;
+      //           case 5: document.write("&nbsp;금요일&nbsp;".fontsize(7).fontcolor("navy"));
+      //             break;
+      //             case 6: document.write("&nbsp;토요일&nbsp;".fontsize(7).fontcolor("purple"));
+      //               break;
+      // }
+
+      document.write("오늘 : ")
+
+      document.write(now.getFullYear()+"년도, ");
+      document.write(now.getMonth()+1+"월, ")
+      document.write(now.getDate()+"일 <br><hr>")
+
+
+
+      document.write("종강 : ")
+
+
+      document.write(end.getFullYear()+"년도, ");
+      document.write(end.getMonth()+1+"월, ")
+      document.write(end.getDate()+"일 <br><hr>")
+
+
+      document.write("D - ")
+      document.write((((end.getMonth()+1)-(now.getMonth()+1))*30)+end.getDate()-now.getDate()+"<br><hr>")
+
+
+      var leftedTime = now.getTime() - end.getTime();
+      var leftedDays = Math.abs(Math.floor(leftedTime/(24*60*60*1000)));
+
+      document.write("오늘은 "+year+"년"+month+"월 "+date+"일("+day+"요일)"+" 입니다.<br>");
+      document.write("과정종료일까지는 "+leftedDays+"일이 남았습니다");
+
+      var at = new Date()
+      at.setFullYear(2021);
+      at.setDate(6);
+      at.setHours(1);
+      at.setMinutes(13);
+      at.setMonth(30);
+      at.setSeconds(40);
+
+      document.write("<br>");
+      document.write(at);
+
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

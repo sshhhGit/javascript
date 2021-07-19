@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>What can Javascript do?</h3>
+    <button id="b1" onclick="changeOn()">사진1</button>
+    <img id="light" src="../imge/딸기.png" style="width: 75px;">
+    <button id="b2" onclick="changeOff()">사진2</button>
+
+    <script>
+        function changeOn() {
+            var imge = document.getElementById("light");
+            imge.src="../imge/파인애플.png"
+        }
+        function changeOff() {
+            var imge = document.getElementById("light");
+            imge.src="../imge/딸기.png"
+        }
+
+    </script>
+</body>
+</html>

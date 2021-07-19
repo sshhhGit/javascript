@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function chk(obj) {
+            if (obj.value == "") {
+            alert("이름을 적어 주셔야 합니다.")
+            obj.focus();
+            }
+        }
+    </script>
+</head>
+<body onload="document.getElementById('name').focus()">
+    <h3>폼관련 이벤트활용</h3>
+    <hr>
+    <p>이름을 입력하지 않고 다른 창으로 이동 할 수 없습니다.</p>
+    <form action="">
+        이름<input type="text" id="name" onblur="chk(this)"><br>
+        학번<input type="text">
+    </form>
+</body>
+</html>

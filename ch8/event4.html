@@ -1,0 +1,57 @@
+<!-- 
+    익명함수(anonymouse)
+            - 함수이름이 ㅇ벗다
+            - 간략하고 직관적으로 사용하기 좋다. 긴 코드는 부적합
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+            function init() {
+                var p1 = document.getElementById('p1');
+                p1.onmouseover = function () {
+                    p1.style.backgroundColor='orchid';
+                } 
+
+
+
+                p1.onmouseout = function () {
+                    p1.style.backgroundColor='white';
+                }
+
+
+
+                var p2 = document.getElementById('p2');
+
+                p2.addEventListener("click", bigsize);
+
+                var btn = document.getElementById('b')
+                btn.onclick = function () {
+                    p2.style.fontSize = "1em";
+                    p2.styles.backgroundColor="yellow";
+                    p2.removeEventListener('click',bigsize)
+                }
+                function bigsize() {
+                    p2.style.fontSize = "3em";
+                    
+                }
+            }
+
+    </script>
+</head>
+<body onload="init()">
+    <h3>익명함수로 이벤트 리스너 작성</h3>
+    <hr>
+    <p id='p1'>마우스를 올리면 오치드색으로 변경</p>
+    <p id='p2'>마우스를 클릭하면 글자크기가 키워짐</p>
+    <hr>
+    <button type="button" id="b">이벤트제거</button>
+</body>
+</html>

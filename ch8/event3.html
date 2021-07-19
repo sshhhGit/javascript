@@ -1,0 +1,56 @@
+<!-- 
+
+    addEventListener()메소드를 활용
+
+        객체.addEventListener(이벤트이름, 리스너함수명[, 흐름방식])
+            
+            - 이벤트이름 : 이벤트타입
+            - 리스너함수 : 리스너로 등록할 함수
+            - useCapture : true이면 이벤트 흐름중 캡처단계에서 실행
+                           false이면 버블단계에서 실행 (디폴트)
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var p;
+        function init() {
+            p = document.getElementById('p')
+
+            p.addEventListener("mouseover", over)
+            p.addEventListener("mouseover", size)
+            p.addEventListener("mouseover", fontstyle);
+        }
+        function over() {
+            p.style.backgroundColor = "orchid"
+        }
+        function out() {
+            p.style.backgroundColor = "white"
+        }
+        function size() {
+            p.style.fontSize = "20px"
+        }
+        function fontstyle() {
+            p.style.fontStyle = "italic"
+        }
+
+        function remove() {
+            document.getElementById('r')
+            p.removeEventListener("mouseover", over)
+            
+        }
+    </script>
+</head>
+<body>
+    <h3>addEvenListener()를 이용한 리스너 등록</h3>
+    <button type="button" id="r" onclick="remove()">이벤트 제거</button>
+    <hr>
+    <p id="p">마우스를 올리면 배경색을 orchid색으로 변경해보자</p>
+</body>
+</html>

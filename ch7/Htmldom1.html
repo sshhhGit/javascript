@@ -1,0 +1,225 @@
+<!-- 
+    1. 웹브라우저
+        - 코어객체
+        - HTMLDOM객체
+            . 브라우저는 HTML페이지를 로드하는 과정에서
+              모든 태그를 각각의 객체로 만들어 제공한다.
+            . HTML 태그를 동적으로 제어하기 위해 HTML DOM객체를 활용한다.
+            . 브라우저마다 HTML DOM객체와 BOM객체가 모두 100% 호한되지는 않는다.
+              w3c표준을 완벽하게 만족시키지는 못하고있다.
+        - BOM객체
+
+    2. HTML DOM
+        - 태그에 CSS스타일 시트가 동반되므로 태그객체를 활용해서 style을 동적제어할 수 있다.
+        - DOM 객체속에 있는 콘텐츠(이미지, 텍스트등)를 innerHTML을 통해서 제어하도록 한다.
+    3. DOM트리
+
+                            window 객체
+                                |
+                    -------------------------------------------------
+                    |           |           |           |           |
+                    navigator   |           history     location    screen객체
+                                |
+                                document
+                                |
+                                html
+                                |
+                    -------------------------
+                    |                       |   
+                    head                    body
+                    |                       |
+                ---------           -----------------   
+                |       |           |               |
+                meta    title       p               form
+    previousElementSibling          |               |   nextElementSibling
+                                    span            |
+                                            -----------------
+                                            |       |       |
+                                            input   input   hr
+                            firstElementChild               lastElementChild
+        
+        
+        - DOM객체들의 관계를 4개의 프로퍼티로 연결되고 w3c표준은 6개의 프로퍼티를 가지고 DOM객체에 접근 할 수있다.
+
+            . 부모객체 - parentElement 프로퍼티
+            . 직계자식객체들의 컬렉션 - children 프로퍼티
+            . 첫번째 직계자식 - firstElementChild 프로퍼티
+            . 마지막 직계자식 - lastElementChild 프로퍼티
+            . 왼쪽 사촌 - previousElementSibling 프로퍼티
+            . 오른족 사촌 - nextElementSibling 프로퍼티
+    
+    4. HTML태그와 DOM객체
+
+        - HTML
+            <p id="first" style="color:red" onclick="this.style.color"
+                문장입니다.
+
+        - DOM객체
+            1. 프로퍼티(속성)   : 태그의 속성을 반영한다.
+            2. 메소드           : HTML 태그를 제어하는 기능
+            3. 컬렉션           : 정보를 집합적으로 표현하는 일종의 배열
+            4. 이벤릿터         : 제공되는 이벤트 약 70여개 중 해당하는 이벤트에 저장되어있는 설정값이 저장된다.
+
+    5. DOM객체의 주요 공통된 프로퍼티, 컬렉션, 메소드
+
+            구분        프로퍼티                    설명
+            --------------------------------------------------------------------------------------
+            기본        id                          태그의 id속성값
+                        lang                        태그의 lang속성값
+                        title                       태그의 title속성값
+                        tagName                     태그이름 문자열
+                        innerHTML                   시작태그와 종료태그 사이의 HTML콘텐츠(텍스트)
+                        style                       style객체에 대한 레퍼런스 값을 
+            --------------------------------------------------------------------------------------
+            DOM트리     childElementCount           자식 DOM객체의 개수
+                        firstElementChild           첫번째 자식 객체
+                        lastElementChild            마지막 자식 객체
+                        nextElementSibling          오른쪽(다음) 형제객체
+                        previousElementSibling  
+            --------------------------------------------------------------------------------------
+            크기와 위치 offestHeight                패딩, 테두리, 스크롤바를 포함한 높이
+                        offestHeight                패딩, 테두리, 스크롤바를 포함한 폭
+                        offestHeight                객체의 출력위치 - 수평옾셋
+                        offestHeight                객체의 출력위치 - 수직옾셋
+            --------------------------------------------------------------------------------------
+            컬렉션      children                    자식DOM객체들의 컬렉션(레퍼런스 배열)
+            ======================================================================================
+            메소드      addEvenListener()           새로운 이벤트 리스너 등록
+                        removeEvenListener()        새로운 이벤트 리스너 제거
+                        appendchild()               마지막 자식 뒤에 새로운 자식 추가
+                        click()                     사용자가 마우스를 클릭한 것과 동일한 작업수행
+                        focus()                     키 입력을 받을 수 있도록 이 객체에 포커스 지정
+                        setAttribute()              속성추가
+                        getAttribute()              속성을 알아내기
+                        insetBefor()                지정된 자식앞에 새로운 자식을 추가
+                        querySelector()             지정된 CSS3 셀렉터와 일치하는 첫번쨰 자식리턴
+                        removeChild()               자식삭제
+                        replaceChild()              자식대체
+
+    6. DOME트리 생성순서               
+
+        1) 가장먼저 window객체 생성
+            - window는 전역객체 웹 페이지와 탭마다 생성
+
+
+        2) window 객체 아래에 document객체가 생성되고, DOM트리를 구축하기 시작
+            - readStrate(대기) 프로퍼티를 document객체가 갖는다.
+
+        3) DOM트리를 구축 중 script요소를 만나면 html문서의 DOM트리구축을 중단하고
+            해당 script의 부분을 분석후 오류가 없다면, 그 위치에서 script를 실행한다.
+            그런데 해당 script부분에 오류가 있다면, HTML DOM트리 구축을 중단한다
+
+        4) script까지 모두 읽고 DOM구축이 성공하면, document는
+            - readState = interactive로 변경한다.
+
+        5) 이때, 웹 브라우저는 DOM트리 구축을 알리기 위해 DOMContentLoad이벤트를 발생시킨다.
+
+        6) img등 외부 리소스를 읽어 들여야 하는 경우, 이후 시점에서 읽는다.
+
+        7) 리소스까지 모두 읽어 들인 후 에는 readyState=complete으로 변경한다.
+           브라우저는 window객체를 상대로 load이벤트(onload를)를 발생시킨다.
+
+    7. document객체
+
+        - HTML문서 전체를 대변하는 객체
+        - 브라우저 HTML문서를 로드하기전에 document객체를 만들고 DOM트리를 만든다.
+        - 모든 DOM객체 접근의 시작점
+        - style 객체가 없다.
+
+        1) 프로퍼티 : HTML 문서의 전반적인 속성을 나타낸다.
+
+                . location      : 현재 문서의 정보를 가진 BOM의 location객체의 레퍼런스 값을 저장하고 있다.
+                . URL           : 현재 문서의 URL값을 저장하고 있다.
+                . domain        : 서버 도메인 이름을 갖고 있다.
+                . cookie        : 쿠기에 대한 레퍼런스 값을 저장하고 있다.
+                . lastModified  : 문서의 최근 수정시간"MM/DD/YYYY hhmmss"형식으로 저장하고있다.
+                . readyState    : 문서의 로딩상태를 저장한다.
+                    - loading >> interactive >>  
+                . title         : 문서의 제목, 태그가 없다면 ""(빈 문자열)
+                . body          : body 객체에 대한 레퍼런스 값
+                . head          : heay 객체에 대한 레퍼런스 값
+
+                . defaultview   : 문서가 출력된 브라우저 윈도우에 대한 레퍼런스
+                . activeElement : 문서가 포커스를 받을때, 문서내의 포커스를 받는 자식객체의 레퍼런스
+                . documentElemnt: html객체에 대한 레퍼런스를 갖는다.
+                
+        2) 컬렉션 : HTML문서내에 만들어진 동일한 태그들을 배열형식으로 컬렉션을 두고 있다.
+                . images컬렉션  : <img>태그들만 모아놓은 컬렉션
+                . forms컬렉션   : <form>태그들만 뫃아놓은 컬렉션
+                . links컬렉션   : href속성을 가진 모든객체 <a>또는 <area>을 모아놓은 컬렉션
+                
+        3) 메솓
+                . 태그접근
+                    getElementsByTagName()      : 태그이름을 가진 모든 태그(DOM객체)을 모아놓은 컬렉션
+                    getElementsByClassName()    : class속성을 갖는 모든 태그를 컬렉션으로 반환
+                    getElementsName()           : name속성을 가진 모든 태그를 컬렉션으로 반환
+                    
+                    getElementBYId()            : 주어진 Id속성을 갖는 "첫번쨰" DOM객체 반환
+                    
+                . 이벤트
+                    addEventListener()          : document객체에 이벤트 리스너 등록
+                    removeEventListener()       : 제거
+
+                . 태그
+                    createElement               : HTML태그생성을 동적으로 추가
+
+                . 기타
+                    open()                      : 창의 내용을 지우고, 새로운 HTML콘텐츠를 쓸 수 있도록 새로운 창을연다.
+                    close()                     : document객체에 있는 HTML콘텐츠를 브라우저에 출력하고, 더 이상 쓰기를 받지 않도록 한다.
+    
+    8. 태그에 접근하는 방법
+        
+        1) 태그이름 : var '태그' = document.getElementsByTagName("태그");
+                      var n = 태그.length;
+                      for(var i=0; i<태그.length;i++){}
+                      태그[0].style.color="red"
+        
+        2) class    : var '이름' = document.getElementsByClassName("클래스");
+
+        3) name     : var '이름' = document.getElementsByName("이름");
+
+        4) id       : var p = document.getElementById("t");
+                      p.style.color = "red";
+
+                      document.getElementById("t").style.color="red";
+
+    9. 이벤트 리스너 (현재 70여종)
+                . onclick   : 사용자가 클릭할떄
+                . onload    : 문서나 이미지의 로딩이 완료된 직후 
+
+
+-->                 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>htmldom</title>
+</head>
+<body>
+    <p id="t" style="color:blue">이것은 <span style="color: red;">문장입니다.</span></p>
+    <form action="">
+        <input type="text" name="" id="">
+        <input type="button" value="테스트" onclick=f()>
+    </form>
+    <script>
+        function f() {
+            // var p = document.getElementById("t")
+            // var v1 = p.firstElementChild;
+            // var v2 = p.parentElement;
+            
+            // document.write("태그이름 : "+p.tagName+"<br>")
+            // document.write("첫번째자식객체 : "+v1+"<br>")
+            // document.write("부모객체 : "+v2+"<br>")
+
+
+            // document.write("************************<br>")
+            var pc = document.getElementsByTagName("p");
+            var len = p.length;
+
+            document.write("p[0]의 텍스트 : " + pc[0].innerHTML);
+            document.write("<br>");
+            document.write("p태그의 개수 : " + len)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- 
+    윈도우 열기
+        . window.open("url/파일명/이미지","이름","속성");
+        . 출력할 웹페이지 주소는 null X
+        . 여는 방법 : 이름에..
+            - _blank    : 이름없는 새 윈도우 창을 연다
+            - _parent   : 현재 윈도우의 부모윈도우에 열기
+            - _self     : 현재 윈도우에 열기
+            - _top      : 브라우저 윈도우에 열기
+            
+        . 이름이 생략되면 창이 계속열리고, 이름이 있으면 하나의 창으로 공유된다.
+        . window.open() 또는 self.open()
+        . window.open() 이때 window만하게되면 document.open()이 호출된다
+        . 윈도우 속성지정함에 있어
+            ex) window.open("~~", "이름", "resizeable=yes") 
+                == window.open("~~", "이름", "resizeable=1") 
+                == window.open("~~", "이름", "resizeable")
+            * resizeable, location, menuvar, scrollbar, status, toolvar 등
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function load(URL) {
+            // window.open(URL, 'myWin', 'letf=300, top=300, width=400, height=300')
+            // window.open(URL, '_blank', 'letf=300, top=300, width=400, height=300')
+            // window.open(URL, '_parent', 'letf=300, top=300, width=400, height=300')
+            window.open(URL, '_self', 'letf=300, top=300, width=400, height=300')
+            // window.open(URL, '_top', 'letf=300, top=300, width=400, height=300')
+            
+        }
+    </script>
+</head>
+<body>
+    <h3>윈도우 열기</h3>
+    <hr>
+    <a href="javascript:load('http://www.graceLand.com')">엘비스 프레슬리 홈페이지</a><br>
+    <a href="javascript:load('https://www.universalorlando.com/web/en/us')">유니버셜 올랜드 홈페이지</a><br>
+    <a href="javascript:load('https://disneyworld.disney.go.com/')">디즈니 월드 홈페이지</a>
+    
+</body>
+</html>

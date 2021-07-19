@@ -1,0 +1,120 @@
+<!-- 
+                BOM(Brower Object Model)
+
+                    window
+                        |
+            -------------------------------------            
+            |           |           |           |
+        navigator   document    location    screen
+                        |
+                        |
+
+
+        * BOM은 자바스크립트 코드로 
+                 . 문서의 URL
+                 . 스크린 장치
+                 . 브라우저의 종류와 기능
+                 . 브라우저의 실행환경을 제어할 수 있도록
+
+                제공하는 객체이다.
+                 . BOM은 표준은 없다.
+                 . 최상위 객체느 window이다
+
+        * Window객체
+            - 열려있는 브라우저 윈도우나 탭 윈도우를 나타내는 객체이다.
+            - 윈도우마다 하나씩 생성
+            - 생성되는 경우
+                    . 브라우저가 새로운 웹 페이지를 로드할때 - 자동 생성
+                    . <iframe>태그당 하나의 window객체 생성 - 자동 생성
+                    . 개발자가 자바스크립트 코드로 생성 - 임의 생성
+
+        * 구현방법
+                    window.open("웹 페이지URL", "윈도우 이름", "윈도우 속성")
+
+        * window객체의 프로퍼티와 메소드
+                
+                1. 프로퍼티
+
+                        . window        : 현재 윈도우 객체에 대한 프로펀스
+                        . self          : 현재 윈도우 객체에 대한 래퍼런스
+                        . document      : 윈도우에 담긴 document 객체에 대한 레퍼런스
+                        . name          : 윈도우 이름 문자열
+
+                        . location      : location 객체의 레퍼런스
+                        . history       : history 객체의 대한 레퍼런스
+                        . navigator     : navigator 객체의 대한 레퍼런스
+
+                        . menubar       : 메뉴바객체에 대한 레퍼런스
+                        . personalvar   : 북마크 툴바등 사용자 개인의 취향에 따라 가능
+                        . scrollbar     : 스크롤바의 표시여부 (yse, no)
+                        . toolbar       : 도구모음의 표시여부 (yse, no)
+
+                        . frames        : 윈도우에 존재하는 iframe객체에 대한 컬렉션
+                        . length        : 윈도우에 존재하는 iframed의 갯수
+
+                        . top           : 최상위 윈도우
+                        . parent        : 부모 윈도우
+                        ----------------------------------------------------------------
+                        . innerWidth    : 수직 스크롤바를 포함해서 출력되는 영역의 폭
+                        . innerHeight   : 수평 스크롤바를 포함한 영역의 높이
+                        . outerWidth    : 윈도우 전체의 폭
+                        . outerHeight    : 윈도우 전체의 높이
+                        . screenX, screenY : 스크린상의 윈도우 x, y 좌표
+                        . scrollX, scrollY : 스크롤상의 윈도우 x, y 좌표
+
+                2. 메소드
+                        . open() : 새 윈도우 열기
+                        . close() : 윈도우 닫기
+                        . focus() : 윈도우 포커스를 주어 키보드 입력을 받을 수 있는 메소드
+                        . blur() : 포커스를 잃는다
+
+                        . alert()
+                        . confirm()
+                        . prompt()
+
+                        . print() : 현재 페이지를 출력하기 위해 프린트 다이얼로그를 출력
+
+                        . setInterval() : 타임아웃 코드가 반복호출되도록 타이머를 가동
+                        . clearInterval() : setInterval() 헤제
+                        . setTimeout() : 타임아웃 코드
+                        . clearTimeout() : setTimeout() 해제
+
+                        . moveBy() : 지덩도니 픽셀만큼 윈도우를 이동
+                        . moveTo() : 지정된 위치로 윈도우 이동
+                        . resizeBy() : 지정된 크기만큼 조절
+                        . resizeTo() : 지정된 크기로 조절
+                        . scrollBy() : 주어진 픽셀만큼 상하좌우 스크롤
+                        . scrollTo() : 특정한 좌표로 스크롤
+
+                        
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function bgsetup() {
+            window.status = "윈도우 객체의 속성들을 지정해 봅시다";
+            document.write(window.status+"<br>");
+
+            document.bgColor = "yellow";
+        }
+        //실제 문서가 출력될 윈도우 클라이언트 영역의 높이와 너비
+        document.write("<p>window.innerHeight : " + window.innerHeight+"</p>")
+        document.write("<p>window.innerWidth : " + window.innerWidth+"</p>")
+
+        //화면전체
+        document.write("<p>window.outerHeight : " + window.outerHeight+"</p>")
+        document.write("<p>window.outerWidth : " + window.outerWidth+"</p>")
+    </script>
+</head>
+<body>
+    <p><input type="button" value="버튼" onclick="bhesetup()"></p>
+</body>
+</html>

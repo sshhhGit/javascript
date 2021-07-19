@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function Student(name, dept, grade) {
+
+            this.name = name;
+            this.dept = dept;
+            this.grade = grade;
+
+            phone = "010"
+        }
+    </script>
+</head>
+<body>
+    <script>
+
+        var s1 = new Student("홍길동", "컴푸터학과", 2);
+        var s2 = new Student("이순신", "건축과", 1);
+
+        var myDate = new Date(); //내장객체
+
+        //활용
+        document.write("("+(1900+myDate.getYear())+"년"+(1+myDate.getMonth())+"월"+
+        (myDate.getDate())+"일 현재)<br><br>");
+
+        document.write("<hr>");
+
+        document.write(s1.name+"은"+s1.dept+"학과"+s1.grade+"학년 학생입니다<br>")
+        document.write(s2.name+"은"+s2.dept+"학과"+s2.grade+"학년 학생입니다<br>")
+
+        document.write(phone)
+        document.write(account.phone)
+
+
+
+    </script>
+</body>
+</html>

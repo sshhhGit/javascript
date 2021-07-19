@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<h3>String 객체의 문자열 처리 관련 메소드</h3>
+</body>
+
+<script type="text/javascript">
+
+	var str = new String("Java Script Programing")
+
+	document.write("str = "+str+"<br><br><br>");
+	document.write("str.toLowerCase() => "+str.toLowerCase()+"<br>")
+	document.write("str.toUppererCase() => "+str.toLowerCase()+"<br><br>")
+	document.write("str.charAt(5) => "+str.charAt(5)+"<br>")
+	document.write("str.substring(5,11) => "+str.substring(5,11)+"<br>")
+	document.write("str.slice(5,11) => "+str.slice(5,11)+"<br>")
+	document.write("str.substr(12,7) => "+str.substr(12,7)+"<br><br>")
+	document.write("str.indexOf('P') => "+str.indexOf('P')+"<br>")
+	document.write("str.lastIndexOf('P') => "+str.lastIndexOf('P')+"<br><br>")
+	document.write("str.concat('!!!')=> "+str.concat('!!!')+"<br><br>")
+	document.write("str.split(' ',3) => "+str.split(' ',3)+"<br><br>")
+
+document.write("str.charCodeAt(0) => "+str.charCodeAt(0));
+	for(var i=0;i<str.length;i++){
+		document.write(str[i]+":"+str.charCodeAt(i));
+	}
+
+
+
+
+
+
+</script>
+</html>

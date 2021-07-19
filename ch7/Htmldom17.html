@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>이미지요소 삭제와 대체</h3>
+    <hr>
+    <div>
+        <img src="../imge/1.png" width="50px" height="50px" alt="">
+        <img src="../imge/2.png" width="50px" height="50px" alt="" id="w1">
+        <img src="../imge/3.png" width="50px" height="50px" alt="">
+        <img src="../imge/1.png" width="50px" height="50px" alt="" id="w2">
+        <img src="../imge/2.png" width="50px" height="50px" alt="">
+        <img src="../imge/3.png" width="50px" height="50px" alt="">
+        <img src="../imge/1.png" width="50px" height="50px" alt="">
+        <img src="../imge/2.png" width="50px" height="50px" alt="">
+    </div>
+    <br><br>
+    <button type="button" onclick="deleteW1()">두번째 이미지 삭제</button>
+    <button type="button" onclick="replaceW2()">네번째 이미지 대체</button>
+    <script>
+        function deleteW1() {
+            
+            var deletedTag = document.getElementById("w1");
+            deletedTag.parentNode.removeChild(deletedTag);
+        }
+        function replaceW2() {
+            var newTag = document.createElement("img");
+            newTag.setAttribute('src', '../imge/딸기.png')
+            newTag.setAttribute('widht','60px');
+            newTag.setAttribute('height','60ps')
+
+            var oldTag = document.getElementById("w2");
+            var parent = oldTag.parentNode;
+            parent.replaceChild(newTag,oldTag)
+        }
+
+    </script>
+</body>
+</html>

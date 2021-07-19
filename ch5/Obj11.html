@@ -1,0 +1,100 @@
+<!--
+		메소드			HTML태그				설명
+		ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+		big()			<big>				글자크기를 현재의 글자보다 한단계 크게 지정
+		small()			<small>				글자가 깜박거리게 지정
+		blink()			<blink>				글자가 깜빡거리게 지정
+		bold()			<b>					글자를 굵게 지정
+		italics()		<i>					글자를 이탤릭체로 지정
+
+		strike()		<strike>			가운데줄이 그어지도록 지정
+		sup()			<sup>				글자를 위 첨자로 출력
+		sub()	 		<sub>				글자를 아래 첨자로 출력
+
+		fontcolor(색) 	<font color="색">	글자의 색지정
+		fontsize(크기) 	<font color="크기">	글자의 크기지정
+
+		anchor('이름')	<a name='이름'>		'이름' 위치로 페이지를 이동시킨다.
+		link('url')		<a href='url'>		URL이 지정하는 사이트나 다른 위치로 이동
+
+		숫자 -> 문자 : 객체.parsetoString()
+		문자 -> 숫자 : 객체.parseInt(), 객체.parseFloat()
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+
+		document.write("<h3><P>"+"(*1*)String객체의 length속성".anchor("list1")+"</h3></P>");
+
+		document.write("<br> [1]한글 => ", "자바스크립트".length);
+		document.write("<br> [2]영문 => ", "JavaScript".length);
+
+		document.write("<p>String객체의 위치 이동관련 메소드 알아보기".link("../ch4_함수\F08_전역함수6.html")+"</p>");
+
+		var str = "자바스크립트(Java Script)";
+		for(i=0;i<str.length;i++){
+			document.write("<br>");
+		}
+
+		//메소드 적용실습
+		document.write("<hr><h3><p> (*2*) String객체의 글꼴 관련 메소드".anchor("list2")+"</p></h3>");
+
+		document.write("<br>[1] big메소드 =>" + str.big());
+		document.write("<br>[2] small메소드 =>" + str.small());
+		document.write("<br>[3] blink메소드 =>" + str.blink());
+		document.write("<br>[4] bold메소드 =>" + str.bold());
+		document.write("<br>[5] italics메소드 =>" + str.italics());
+		document.write("<br><br>[6] strike메소드 =>" + str.strike());
+		document.write("<br>[7] sub메소드 =>" + str.sub());
+		document.write("<br>[8] sup메소드 =>" + str.sup());
+		for(i=0;i<str.length;i++){
+			document.write("<br>");
+		}
+
+		document.write("<hr><h3><p>(*3*)String객체의 위치이동 관련 메소드".anchor("list3")+"</h3></p>")
+
+		document.write("<p>String객체의 속성알아보기".link('#list1'));
+		document.write("<p>String객체의 글꼴관련 알아보기".link('#list2'));
+		document.write("<p>link메소드(네이버)".link("https://www.naver.com"));
+		document.write("<p>link메소드(다음)".link("https://www.daum.net"));
+
+
+	</script>
+</head>
+<body>
+	<hr>
+	<h3>HTML에서 태그로 출력</h3>
+	<p><big>문자열 한단계 크게</big></p>
+	<p><small>문자열 한단계 작게</small></p>
+	<p><b>문자열 굵게 지정</b></p>
+	<p><i>이탤릭체로 지정</i></p>
+	<p><strike>가운데 줄이 그어지도록 지정</strike></p>
+	<p>아래 첨자<sub>아래 첨자</sub></p>
+	<p>위 첨자<sup>위 첨자</sup></p>
+
+	<p><font style="color: red">글자색 지정</font></p>
+	<p><font size="20px">글자크기 지정</font></p>
+
+	<a href="#그곳">그곳으로 가기</a>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br>
+
+	<a name="그곳"><h2><u>여기가 그곳입니다</u></h2></a>
+
+
+</body>
+</html>

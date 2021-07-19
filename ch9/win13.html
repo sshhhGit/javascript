@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function printWelcome() {
+            var newWin = window.open("", "", "left=500, top=400, width=200, height=300")
+
+            newWin.document.write("<h3>접속을 환영합니다.</h3>");
+
+            newWin.document.title = "환영";
+            newWin.document.body.style.backgroundColor="yellow";
+            newWin.document.write("불금입니다");
+            newWin.document.close();
+
+            
+        }
+
+    </script>
+</head>
+<body onload="printWelcome()">
+    <h3>새로운 창에 글자쓰기</h3>
+    <hr>
+    <p>여기에서 새로운 페이지로 전환됩니다</p>
+</body>
+</html>

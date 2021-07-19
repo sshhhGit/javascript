@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>버튼을 클릭하면 이미지가 추가됩니다.</h3>
+    <hr>
+    <button type="button" onclick="insertImage1()">이미지1</button>
+    <button type="button" onclick="insertImage2()">이미지2</button>
+    <button type="button" onclick="insertImage3()">이미지3</button>
+    <br><br><br>
+    <div id="d"></div>
+    <hr>
+    이제 점심시간입니다. 맛있게 드세요.
+
+
+    <script>
+        function insertImage1() {
+            var tag = document.getElementById("d")
+            var newImge = document.createElement("img")
+            newImge.setAttribute('src', '../imge/딸기.png');
+            newImge.setAttribute('width', '100px');
+            newImge.setAttribute('height', '80px');
+
+            tag.appendChild(newImge);
+        }
+        function insertImage2() {
+            var tag = document.getElementById("d")
+            var newImge = document.createElement("img")
+            newImge.setAttribute('src', '../imge/apple.png');
+            newImge.setAttribute('width', '100px');
+            newImge.setAttribute('height', '80px');
+            
+            tag.appendChild(newImge);
+            
+        }
+        function insertImage3() {
+            var tag = document.getElementById("d")
+            var newImge = document.createElement("img")
+            newImge.setAttribute('src', '../imge/banana.png');
+            newImge.setAttribute('width', '100px');
+            newImge.setAttribute('height', '80px');
+
+            tag.appendChild(newImge);
+            
+        }
+
+
+    </script>
+</body>
+</html>

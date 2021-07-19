@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function movingImages() {
+
+            var parent = document.getElementById("p1");
+
+            var imgTags = document.querySelectorAll("img"); //모든 요소노드 객체들을 탐색해서 노트리스트(컬렉션)으로 반환
+
+            var movingImage = imgTags[0];
+            movingImage.parentNode.removeChild(movingImage);
+
+            parent.appendChild(movingImage);
+            
+        }
+    </script>
+</head>
+<body>
+    <h3>웹 브라우저 이미지 이동</h3>
+    <hr>
+    <div id="p1">
+        <img src="../imge/jump1.png" width="150" height="150" alt="">
+        <img src="../imge/jump2.png" width="150" height="150" alt="">
+        <img src="../imge/jump3.png" width="150" height="150" alt="">
+        <img src="../imge/jump4.png" width="150" height="150" alt="">
+        <img src="../imge/jump5.png" width="150" height="150" alt="">
+        <img src="../imge/jump6.png" width="150" height="150" alt="">
+    </div>
+    <br>
+    <button type="button" onclick="setInterval(movingImages, 200)">START</button>
+</body>
+</html>

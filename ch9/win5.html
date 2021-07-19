@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sizeUp() {
+            window.resizeBy(50, 50);
+            
+        }
+        function sizeDown() {
+            window.resizeBy(-50, 50);
+        }
+        function moveUp() {
+            window.moveBy(0, -50);
+        }
+        function moveDown() {
+            window.moveBy(0, 50);
+        }
+        function moveLeft() {
+            window.moveBy(-50, 0);
+        }
+        function moveRight() {
+            window.moveBy(50, 0);
+        }
+     
+
+
+    </script>
+</head>
+<body onload="window.resizeTo(500, 350)" style="text-align: center;">
+
+    <p>브라우저 크기 위치 조정해보기</p>
+    <input type="button" value="확대" onclick="sizeUp()">
+    <input type="button" value="축소" onclick="sizeDown()"><br><br>
+    <hr>
+    <input type="button" value="상" onclick="moveUp()">
+    <input type="button" value="하" onclick="moveDown()">
+    <input type="button" value="좌" onclick="moveLeft()">
+    <input type="button" value="우" onclick="moveRight()"><br><br>
+    <hr>
+    
+    
+</body>
+</html>

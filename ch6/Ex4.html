@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>문자열배열 다루기</h3>
+    <hr>
+    <script>
+        
+        var arr = new Array("홍길동", "이순신", "강감찬", "을지문덕");
+        document.write("이름 : ")
+        for(i=0;i<arr.length;i++){
+			document.write(arr[i]+" ");
+        }
+        document.write("<br>가장 긴 이름 : ")
+
+        document.write("<br>가장 먼저 나오는 이름 : ")
+        document.write(arr.sort()[0])
+        document.write("<br>증가순 이름 : ")
+        document.write(arr.sort())
+
+
+    </script>
+</body>
+</html>

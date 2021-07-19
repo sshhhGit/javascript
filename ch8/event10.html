@@ -1,0 +1,32 @@
+<!-- 
+    컨텍스트메뉴(context menu)
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function hidemenu() {
+            alert("오른쪽 클릭<컨텍스트메뉴>금지");
+            
+            return false;
+        }
+        document.oncontextmenu = hidemenu
+    </script>
+</head>
+<body>
+    <h3>oncontextmenu에서 컨텍스 메뉴금지</h3>
+    <hr>
+    마우스 오른쪽 클릭은 금지됩니다. 아무곳이나 클릭해도
+    컨텍스트 메뉴를 볼 수 없습니다.
+    <br><br><br>
+
+    <img src="../imge/엄마는그래도되는줄.png"  alt="어머니">
+</body>
+</html>

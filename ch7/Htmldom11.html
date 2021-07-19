@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function change() {
+            var nameArray = document.getElementsByName("a");
+            for(var i=0; i<nameArray.length;i++){
+                var name1 = nameArray[i];
+                name1.style.color = 'red';
+                name1.style.fontSize = '20px';
+                name1.style.fontWeight = '50px';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>내가 제일 좋아하는 과일
+        <button type="button" onclick="change()">눌러주세요</button>
+    </h3>
+    <hr>
+    저는 빨간 <span name="a">사과</span>를 좋아해서아침마다 한개씩 먹고있습니다. 운동할때는 중간 중간에 <span name="a">바나나</span>를 먹지요. 탄수화물 섭취가 빨라 힘이 납니다. 또한 달콤한 향기를 품은 <span name="a">체리</span>와 여름 ㅁ낸새 물씬나는 <span name="a">자두</span>를 좋아합니다.
+</body>
+</html>

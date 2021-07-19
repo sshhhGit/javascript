@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Calculator(n1, n2){
+
+            this.n1 = n1;
+            this.n2 = n2;
+
+            //메소드 : 외부에 정의
+            this.add = add;
+            this.sub = sub;
+            this.mul = mul;
+            this.div = function d() {
+                document.write(this.n1+"/"+this.n2+"="+(this.n1/this.n2)+"<br>");
+            }
+        }
+        function add() {
+            document.write(this.n1+"+"+this.n2+"="+(this.n1+this.n2)+"<br>");
+        }
+        function sub() {
+            document.write(this.n1+"-"+this.n2+"="+(this.n1-this.n2)+"<br>");
+        }
+        function mul() {
+            document.write(this.n1+"*"+this.n2+"="+(this.n1*this.n2)+"<br>");
+        }
+
+
+    </script>
+</head>
+<body>
+    <script>
+        n1 = parseFloat(prompt());
+        n2 = parseFloat(prompt());
+
+        var cal = new Calculator(n1, n2);
+
+        cal.add();
+        cal.sub();
+        cal.mul();
+        cal.div();
+
+
+    </script>
+</body>
+</html>

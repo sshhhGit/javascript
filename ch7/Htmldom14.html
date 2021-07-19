@@ -1,0 +1,47 @@
+<!-- 
+    documnet에 DOM트리 조작관련 메소드
+        . createElement("태그")     : 새로운 요소 노드를 생성한다.
+        . appendChild()             : 추가
+        . renmoveChild()            : 삭제
+        . insertBefore(태그, 노드)  : 특정자식 노드의 직전형제 노드로 추가
+        . replace(new, old)         :
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function creatDVI() {
+
+            var obj = document.getElementById("parent");
+
+            var newDiv = document.createElement("div");
+            newDiv.innerHTML = "새로 생성된 DIV입니다.";
+            newDiv.setAttribute("id", "myDIV");
+            newDiv.style.backgroundColor="yellow";
+            newDiv.style.fontSize="20px";
+            newDiv.style.fontWeight="border";
+
+            newDiv.addEventListener("click", function () {
+                var p = this.parentElement;
+                p.removeChild(this)
+            })
+
+        
+            
+        }
+    </script>
+</head>
+<body id="parent">
+    <h3>DIV객체를 동적으로 생성, 삽입, 삭제해보기</h3>
+    <hr>
+    <p>DOM트리에 동적으로 객체를 삽입할 수 있습니다.</p>
+    <a href="javascript:creatDVI()">DIV생성</a>
+</body>
+</html>

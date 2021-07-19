@@ -1,0 +1,56 @@
+<!--
+	사용자객체
+		;스크립트에서 객체 종류 : 내장객체, 사용자객체, DOM객체, BOM객체
+		;사용자객체는 사용자가 직접만드는 객체
+
+	객체생성
+		var 레퍼런스 변수 = new 프로토타입();
+
+			* new뒤에 따라오는 생성자명을 프로토타입(prototype)이라고 부르고
+			  자바스크립트에서는 클래스가 없다.
+
+			* 프로토타입
+				- 객체의 모양을 가진 틀과 같다.
+				- 프로토타입 = 프로포티(속성)+메소드 구성된다
+				- 프로토타입은 함수로 작성한다.
+				- 프로토타입을 만ㅁ들때 사용하는 함수를 생성자함수(constructor)라고 부른다
+
+	객체접근
+			객체명.프로퍼티
+			객체명.메소드
+
+	객체구현 3가지 방법
+			1) Object()활용한 생성
+			2) 리터럴 표기법을 생성
+			3) 프로토타입으로 생성
+
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+ 		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+
+			var person = new Object();
+
+			person.name = "홍길동";
+			person.nickName = "X-MAN";
+			person.age = 24;
+			person.major = "자바스크립트";
+
+		</script>
+</head>
+<body>
+	<h3>Object()활용을 통한 객체생성</h3>
+	<hr>
+	<script type="text/javascript">
+
+		document.write("이름 : "+person.name+"<br>");
+		document.write("나이 : "+person.age+"<br>");
+		document.write("별명 : "+person.nickName+"<br>");
+		document.write("전공 : "+person.major+"<br>");
+
+	</script>
+</body>
+</html>

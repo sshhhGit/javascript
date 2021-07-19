@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // ex10번을 Book 사용자 객체로 생성하여 출력
+
+        function Book(title, author, price){
+        this.myTitle = title;
+        this.myAuthor = author;
+        this.myPrice = price;
+        }
+        
+        
+    </script>
+</head>
+<body>
+    <h3>book 객체 만들기</h3>
+    <hr>
+    <script>
+        var myBook = new Book("HTML5/CSS6", "홍길동", 20000)
+        document.write("book : "+myBook.myTitle+", "+myBook.myAuthor+", "+myBook.myPrice)
+    </script>
+</body>
+</html>

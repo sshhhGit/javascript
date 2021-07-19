@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+    var account = {
+
+        owner : "홍길동", code : "1111", balance : 35000,
+        inquiry : inquiry, deposit : deposit, withdraw : withdraw
+        
+        };
+
+    function inquiry() {
+    return this.balance;
+    }
+    function deposit(money){
+        this.balance = this.balace+money;
+    }
+    function withdraw(money){
+        this.balance -= money;
+    }
+
+
+
+</script>
+</head>
+<body>
+    <h3>리터럴 표기법으로 객체 만들기</h3>
+    <hr>
+    <script>
+        document.write("예금주 : "+account.owner+"<br>");
+        document.write("예금주 : "+account.code+"<br>");
+        document.write("예금주 : "+account.balance+"<br>");
+
+        deposit(5000);
+
+        document.write(account.inquiry)
+
+    </script>
+</body>
+</html>

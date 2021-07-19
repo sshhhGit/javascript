@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로퍼티를 활용한 리스너등록</title>
+    <script>
+
+        var img;
+        function init() {
+            img = document.getElementById('img');
+            img.onmouseover = over;
+            img.ommouseout = out;
+        }
+        function over() {
+            img.style.width = "302px"
+            img.style.height = "302px"
+        }
+        function out() {
+            img.style.width = "300px"
+            img.style.height = "300px"
+        }
+
+        var p;
+        function test() {
+            p = document.getElementById('p');
+            p.onmouseover = tsize;
+        }
+        function tsize() {
+            p.style.fontsize = '50px';
+        }
+    </script>
+</head>
+<body>
+    <h3>DOM객체의 이벤트 리스너 프로퍼티에 함수등록</h3>
+    <hr>
+    <img id='img' src="../imge/아이들.png" width="300px" alt="" onload="init()">
+    <p>문서나 이미지의 로딩이 완료된 후 마우스를 올리면 이미지가 커집니다.</p>
+    <p id="p" onclick="tset()">복수의 리스너등록이 되는지 확인해 봅시다.</p>
+</body>
+</html>

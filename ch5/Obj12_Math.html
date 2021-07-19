@@ -1,0 +1,65 @@
+<!--
+		Math객체
+			; 수학과 관련된 객체
+
+			. 정적객체로 다른객체와 다르게 new연산자를 사용하지 않는다.
+			. Math.속성 / Math.메소드() 이렇게 new 없이 직접 사용.
+
+			. 주요속성
+				- E 		: 자연로그 밑에 사용되는 오일러 상수
+				- LN1- 		: 10의 자연로그(약 2.032)
+				- LN2		: 2의 자연로그(0.693)
+				- PI		: 원주율(3.14..)
+				- SQRT_2	: 1/2의 제곱근 (0.707)
+				- SQRT  	: 2의 제곱근 (1.414)
+
+			. 주요메소드
+				- ceil(n)	: n의 소수부분을 올림한 값
+				- floor(n)  : 버림
+				- round(n)  : 반올림
+				- max(n, m) : 둘중 큰 값
+				- min(n ,m) : 둘중 작은 값
+				- pow(n, m) : n의 m승
+				- exp(n)    : e의 n승
+				- abs(n)    : 절대 값
+				- sqrt(n)   : n의 제곱근
+				- sin(n)    : n의 제곱근
+				- cos(n)    : n의 제곱근
+				- tan(n)    : n의 제곱근
+				- randmom() :
+
+
+ -->
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+
+	var exp = new Array();
+	var op = new Array("abs(-2,1)", "ceil(3.14)", "floor(3.45)", "round(3.45)", "max(5,7)", "min(5,7)", "pow(3,4)", "sqrt(6)", "PI", "SQRT1_2" );
+
+exp[0] = Math.abs(-2.1)
+exp[1] = Math.ceil(3.14)
+exp[2] = Math.floor(3.45)
+exp[3] = Math.round(3.45)
+exp[4] = Math.max(5,7)
+exp[5] = Math.min(5,7)
+exp[6] = Math.pow(3,4)
+exp[7] = Math.sqrt(6)
+exp[8] = Math.PI
+exp[9] = Math.SQRT1_2
+
+var ran = Math.floor(Math.random()*10);
+
+document.write("<br>Math객체의 "+op[ran]+"을 연산한 결과: "+exp[ran]+"<br>")
+
+document.write(Math.SQRT1_2)
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

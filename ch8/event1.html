@@ -1,0 +1,68 @@
+<!-- 
+    이벤트?
+        . 사용자의 입력행위나 문서, 브라우저의 상태변환을 브라우저가 자바스크립트 코드에 알려주는 "통지"이다.
+
+    이벤트리스너? 
+        . 발생한 이벤트에 적절히 대처하기 위해 작성된 자바스클비트 코드이다.
+
+    웹페이지의 동적변화
+        . 이벤트가 발생되면 브라우저는 개발자가 작성해놓은 이벤트 리스너를 호출해서 이벤트를 처리하게 된다.
+
+    이벤트종류(약70여개)
+        . 이벤트 리스너는 이벤트앞에 on을 덧붙이는것을 규칙으로 한다.
+        
+                    이벤트 리스너           이벤트가 발생하는 경유
+            --------------------------------------------------------------
+                    onclick                 사용자가 객체에 클릭할 경우
+                    onload                  문서나 이미지의 로딩이 완료된 직후
+                    onabort                 이미지나 문서의 로딩이 중단된 경우
+                    onresize                윈도우, 프레임 혹은 객체크기가 변경될 경우
+                    onfocus                 객체가 포커스를 가지게 되었을때
+                    onblur                  객체가 포커스를 잃을때
+                    onchange                input, select, textarea등 선택내용이나 체크상태가 변경될때
+                    onreset                 form의 reset버튼을 눌렀거나, 스크립트 코트도 폼을 리셋시킬때
+                    onsubmit                submit 버튼을 클릭해서 form을 전송할때 (스크립트 코드로 form의 submit()를 호출할때는 발생X)
+
+                    onkeydown               사용자가 아무 키나 누르는 순간
+                    onkeypress              문자숫자키를 누르는 순간
+                    onkeyup                 누른키를 떼는 순간
+
+                    ondblclick              더블클릭할때
+                    onmousedown             마우스버튼이 눌러질때
+                    onmouseenter            마우스 커서가 객체 영역 안으로 들어서는 순간
+                    onmouseover             마우스 커서가 객체 영역 안으로 들어가는 순간(자식들도 포함)
+                    onmouseleave            마우스 커서가 객체 영역을 벗어나는 순간
+                    onmousemove             마우스 커서가 움직이는 동안 계속발생
+                    onmouseout              마우스 커서가 객체영역을 벗어나는 순간(자식들도 포함)
+                    onmouseup               눌러진 마우스 버튼을 놓는 순간
+                    onwheel                 마우스 휠을 굴리는 매 순간
+
+                    onsearch                input type="serch"에 검색 텍스트를 입력하고 엔터키를 누를때
+                    onselect                입력된 텍스트를 사용자가 선택할떄(텍스트를 마우스로 긁어서 선택하는 경우)
+
+    이벤트리스너를 만드는 방법
+        . HTML태그네에서 직접 구현
+        . 이벤트의 프로퍼티 작성구현
+        . addEventListener()활용구현
+        . 익명함수로 구현
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+<body>
+    <h3>HTML태그에 리스너 작성</h3>
+    <hr>
+    <p onmouseover="this.style.backgroundColor='orange'"
+       onmouseout="this.style.backgroundColor='white'; this.style.fontsize='30px'"
+       onwheel="body.style.backgroundColor='yellow'"
+       ondblclick="body.style.fontsize='15px'"
+       >마우스를 올리면 오렌지색으로 배경색을 변경하고, 마우스가 벗어나면 흰색으로 
+    </p>
+</body>
+</html>

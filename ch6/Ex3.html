@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h3>초시간이 3의 배수면 오랜지, 2의 배수면 초록색</h3>
+    <hr>
+    <script>
+        //시간에 따라 배경색이 달라지도록 구현
+        //초시간이 3의 배구오랜지 2의 배수 초록색
+        var now = new Date();
+
+
+document.write("현재시간 : ")
+document.write(now.getHours()+"시")
+document.write(now.getMinutes()+"분")
+document.write(now.getSeconds()+"초")
+
+
+if(now.getSeconds()%3 == 0){
+document.bgColor = "orange"
+
+} else if(now.getSeconds()%2 == 0) {
+document.bgColor = "green"
+}
+
+    </script>
+</body>
+</html>
