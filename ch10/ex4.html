@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>오륜기 그리기</h3>
+    <hr>
+    <canvas
+    id="myCanvas"
+    width="600"
+    height="300"
+    style="background-color: lightgray; border: 10px solid blue"
+></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext('2d')
+        
+        context.beginPath();
+        context.lineWidth=3;
+        for(var i=0; i<3; i++){
+            context.arc(190+(i*110),110,50,0,2*Math.PI,false)
+            if (i<2) {
+            context.arc(245+(i*110),170,50,0,2*Math.PI,false)
+            }
+        }
+        context.strokeStyle="orange"
+        context.stroke();
+
+    </script>
+</body>
+</html>

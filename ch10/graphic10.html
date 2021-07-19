@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function drawCircle(ctx, x, y, radius, colors) {
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, 2*Math.PI);
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = colors;
+            ctx.stroke;
+        }
+        function drawOlympicEx(ctx) {
+            var startX = 60, startY = 60;
+            var radius = 30;
+
+            var colors = ["deepskyblue", "black", "red", "yellow", "green"];
+
+            var x = startX;
+            var y = startY;
+            var gap = 6;
+
+            for(i=0; i<3; i++){
+                drawCircle(ctx,x,y,radius,colors[i]);
+                x = x + radius*2+gap;
+            }
+
+            x = startX + radius+gap/2;
+            y = startY + radius;
+
+            for(j=i;j<5;j++) {
+                drawCircle(ctx, x, y, radius, colors[j]);
+                x = x + radius*2+gap;
+            }
+        }
+
+    </script>
+
+
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="150" style="background-color: aliceblue;"></canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d')
+
+        drawOlympicEx(context);
+
+    </script>
+</body>
+</html>

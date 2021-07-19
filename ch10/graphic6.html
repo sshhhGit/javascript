@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>캔버스에 이미지 그리기</h3>
+    <hr>
+    <canvas
+        id="myCanvas"
+        width="500"
+        height="500"
+        style="background-color: aliceblue; border: 20px solid #696969"
+    ></canvas>
+    
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+
+        var img1 = new Image();
+        img1.onload=function () {
+            context.drawImage(img1, 20, 20, 100, 200);
+        }
+        img1.src="../imge/elsa.png"
+
+        var img2 = new Image();
+        img2.onload = function(){
+            context.drawImage(img2, 150, 20, 300, 300);
+        }
+        img2.src="../imge/거리.png"
+
+        var img3 = new Image();
+        img3.onload = function(){
+            context.drawImage(img3, 400, 300, 400, 400, 50, 350, 400, 100);
+            //                      sx    sy   sw  sh   dx  dy   dw   dh
+        }
+        img3.src="../imge/elsa.png";
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="init()">
+    <h3>캔버스에 그림그리기</h3>
+    <hr>
+    <canvas
+        id="myCanvas"
+        width="1000"
+        height="600"
+        style="background-color: aliceblue; border:20px solid #cd853f"
+    ></canvas>
+    <script>
+        var canvas, context;
+        function init() {
+            canvas = document.getElementById('myCanvas');
+            context = canvas.getContext('2d');
+
+            context.lineWidth=2;
+            context.strokeStyle="blue";
+
+            canvas.addEventListener("mousemove", move, false);
+            canvas.addEventListener("mousedown", down, false);
+            canvas.addEventListener("mouseup", up, false);
+            canvas.addEventListener("mouseout", out, false);
+        }
+
+        var startX=0, startY=0;
+        var draging = false;
+
+        //그리는기능
+        function draw(curX, curY) {
+            context.beginPath();
+            context.moveTo(startX, startY);
+            context.lineTo(curX, curY);
+            context.stroke();
+
+        }
+        //마우스가 이동할때
+        function move(e) {
+            if (!draging) {
+                return;
+            }
+
+            var curX = e.offsetX, curY=e.offsetY;
+            draw(curX, curY);
+
+            startX = curX;
+            startY = curY;
+
+        }
+        //마우스를 눌렀을때
+        function down(e) {
+            startX = e.offsetX;
+            startY = e.offsetY;
+            draging = true;
+        }
+        //마우스를 땠을때
+        function up(e)   {
+            draging=false;
+
+        }
+        //마우스가 벗어났을때
+        function out(e)  {
+            draging=false;
+        }
+        
+
+    </script>
+</body>
+</html>
